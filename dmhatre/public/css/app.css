@@ -1,0 +1,79 @@
+.noisy-background {
+	background: url('../img/noisy-background.png') repeat 0 0 transparent;
+}
+.navbar .brand {
+	margin-left: 10px;
+}
+.brand {
+    color: #DDDDDD !important;
+    font-size: 28px !important;    
+    margin-top: 3px;
+    text-decoration: none !important;
+    text-shadow: none !important;
+}
+
+.navbar, .navbar-inner, .nav {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+    border: medium none;
+    box-shadow: none;
+    filter: none !important;
+    margin: 0;
+    padding: 0;
+}
+.navbar-inner {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.navbar .nav > li > a {
+    border-top: 4px solid #FFFFFF;
+    color: #888888;
+    font-size: 16px;
+    padding: 22px;
+    text-shadow: none;
+}
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
+    background: none repeat scroll 0 0 #29A9DF !important;
+    border-top: 4px solid #29A9DF !important;
+    color: #FFFFFF;
+}
+.navbar .nav > .active > a, .navbar .nav > .active > a:focus {
+    background-color: #FFFFFF !important;
+    border-top: 4px solid #29A9DF !important;
+    box-shadow: none;
+    color: #29A9DF !important;
+    text-decoration: none;
+}
+.navbar .nav > .active > a:hover {
+    background: none repeat scroll 0 0 #29A9DF !important;
+    border-top: 4px solid #29A9DF !important;
+    box-shadow: none;
+    color: #FFFFFF !important;
+}
+.navbar .nav .active a:hover > .caret {
+    border-bottom-color: #FFFFFF !important;
+    border-top-color: #FFFFFF !important;
+}
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
+    background: none repeat scroll 0 0 #29A9DF !important;
+    color: #FFFFFF;
+}
+.dropdown-menu .active > a {
+    background: none repeat scroll 0 0 #29A9DF !important;
+    color: #FFFFFF !important;
+}
+.dropdown-menu .active > a:hover {
+    background: none repeat scroll 0 0 #29A9DF !important;
+    color: #FFFFFF !important;
+}
+.nav .active .dropdown-toggle .caret {
+    border-bottom-color: #29A9DF !important;
+    border-top-color: #29A9DF !important;
+}
+.navbar .nav > li > a {
+    padding: 12px 10px;
+}
+.navbar .nav li.dropdown.open > .dropdown-toggle, 
+.navbar .nav li.dropdown.active > .dropdown-toggle, 
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+	background-color: #FFFFFF;
+}
