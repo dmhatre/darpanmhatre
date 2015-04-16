@@ -34,44 +34,26 @@
         padding: 0px
       }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsKEEQTwfOVlfWxiFtuQmdduVyxXIY7ME&v=3.exp&sensor=false"></script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script>
-    
-    function initialize() {
-    	
+    $(function(){
+		var latlngbnds = [];
     	$.get( "/getIPAddresses", function( data ) {
-    		var map;
-			var bounds = new google.maps.LatLngBounds();
-			var map = new google.maps.Map(document.getElementById("map-canvas"));
-			var marker;
-			
-			var infoWindow = new google.maps.InfoWindow({
-				content: "-"
-			});
+    		
+    		var map = L.map('map-canvas').setView([40.785476,-74.008273], 13);
+        	// add an OpenStreetMap tile layer
+        	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        	    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        	}).addTo(map);
 			
 			for(var i=0; i < data.length; i++) {
-			    
-				if(data[i].lat == null || data[i].lon == null) {
-					console.log("#### "+data[i].country+" #### "+data[i].city);
-				}
-				var position = new google.maps.LatLng(data[i].lat, data[i].lon);
-			    bounds.extend(position);
-			    marker = new google.maps.Marker({
-			    	position: position,
-			       	map: map,
-			        title: data[i].ip
-			    });
-			    google.maps.event.addListener(marker, 'click', (function(marker, i) {
-		            return function() {
-		                infoWindow.setContent('<div class="info_content">Country : '+data[i].country+' </br>city : '+data[i].city+' </br>ip : '+data[i].ip+'</div>');
-		                infoWindow.open(map, marker);
-		            }
-		        })(marker, i));
-			    map.fitBounds(bounds);
+				latlngbnds.push(L.latLng(data[i].lat, data[i].lon));
+				L.marker([data[i].lat, data[i].lon]).addTo(map) .bindPopup('Country : '+data[i].country+' </br>city : '+data[i].city+' </br>ip : '+data[i].ip);
 			}
+			map.fitBounds(latlngbnds);
     	});
-    }
-	google.maps.event.addDomListener(window, 'load', initialize);
+    });
     </script>
     <script>
     /*    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
