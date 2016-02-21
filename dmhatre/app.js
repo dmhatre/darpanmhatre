@@ -12,7 +12,7 @@ var express = require('express')
 
 var app = express();
 // all environments
-app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || 80);
 app.engine('.html', require('ejs').__express);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'html');
@@ -62,6 +62,7 @@ app.get('/experience', analyticsFilter, user.experience);
 app.get('/education', analyticsFilter, user.education);
 app.get('/installnode', analyticsFilter, user.installnode);
 app.get('/installredis', analyticsFilter, user.installredis);
+app.get('/spring4mvc', analyticsFilter, user.spring4mvc);
 app.get('/createnodejsserver', analyticsFilter, user.createnodejsserver);
 app.get('/usescreen', analyticsFilter, user.usescreen);
 app.get('/contactinfo', analyticsFilter, user.contactinfo);
