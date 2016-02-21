@@ -5,7 +5,7 @@
     <meta name="description" content="The personal website of Darpan Mhatre, a software evangelist who enjoys learning and implementing new technologies">
 	<meta name="ROBOTS" content="INDEX, FOLLOW">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="keywords" content="Darpan Mhatre, install node.js, create node.js server, use screen command, Java Servlet">
+	<meta name="keywords" content="Darpan Mhatre, install node.js, create node.js server, use screen command, Java Servlet, Spring 4 MVC, Spring MVC, Spring, MVC, Tomcat, Tomcat 7, eclipse tomcat plugin">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
@@ -36,7 +36,7 @@
     </style>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    <script>
+    <script type="text/javascript">
     $(function(){
 		var latlngbnds = [];
     	$.get( "/getIPAddresses", function( data ) {
@@ -46,12 +46,33 @@
         	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         	    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         	}).addTo(map);
-			
-			for(var i=0; i < data.length; i++) {
+        	
+        	for(var i=0; i < data.length; i++) {
+        		if(data[i]!=null && data[i]!="127.0.0.1") {
+        			$.ajax({
+        				  url: "http://www.freegeoip.net/csv/"+data[i],
+        				  crossDomain: true
+        				}).done(function(csvdata) {
+        						var datastr = csvdata.split(",");
+        						var detailstr = "IP: "+datastr[0]+"<br>";
+        						detailstr+= "Country: "+datastr[2]+" "+datastr[1]+"<br>";
+        						detailstr+= "State/Province: "+datastr[4]+" "+datastr[3]+"<br>";
+        						detailstr+= "City: "+datastr[5]+"<br>";
+        						detailstr+= "Zipcode: "+datastr[6]+"<br>";
+        						detailstr+= "Timezone: "+datastr[7]+"<br>";
+        						detailstr+= "Lat/lon: "+datastr[8]+"/"+datastr[9]+"<br>";
+        						detailstr+= "Metrocode: "+datastr[10];
+        						latlngbnds.push(L.latLng(datastr[8], datastr[9]));
+        						L.marker([datastr[8], datastr[9]]).addTo(map) .bindPopup(detailstr);
+        						map.fitBounds(latlngbnds);
+        				});
+        		} 
+        	}      			
+			/*for(var i=0; i < data.length; i++) {
 				latlngbnds.push(L.latLng(data[i].lat, data[i].lon));
 				L.marker([data[i].lat, data[i].lon]).addTo(map) .bindPopup('Country : '+data[i].country+' </br>city : '+data[i].city+' </br>ip : '+data[i].ip);
 			}
-			map.fitBounds(latlngbnds);
+			map.fitBounds(latlngbnds);*/
     	});
     });
     </script>
@@ -94,6 +115,12 @@
     	 <div id="map-canvas" class="col-md-10" style="height:600px;margin-top:31px">
     	 <div class="col-md-1"></div>
     </div>
+    </div>
+    <div class="row" align="center">
+    	<a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
+    		<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/88x31.png" />
+    	</a><br/>
+    	This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
     </div>
     </div>
   </body>

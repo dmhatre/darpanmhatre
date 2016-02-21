@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dmhatre :: Spring 4 MVC</title>
+    <meta name="description" content="The personal website of Darpan Mhatre, a software evangelist who enjoys learning and implementing new technologies">
+	<meta name="ROBOTS" content="INDEX, FOLLOW">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="Darpan Mhatre, install node.js, create node.js server, use screen command, Java Servlet, Spring 4 MVC, Spring MVC, Spring, MVC, Tomcat, Tomcat 7, eclipse tomcat plugin">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+	<script src="../js/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="../lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <style>
+      .navbar-inverse {
+    	background-color: #563D7C;
+    	border-color: #563D7C;
+      }
+      .navbar-inverse .navbar-nav > .active > a, 
+      .navbar-inverse .navbar-nav > .active > a:hover, 
+      .navbar-inverse .navbar-nav > .active > a:focus {
+    	background-color: #FF803E;
+    	color: #FFFFFF;
+      }
+      .navbar-inverse .navbar-nav > .open > a, 
+      .navbar-inverse .navbar-nav > .open > a:hover, 
+      .navbar-inverse .navbar-nav > .open > a:focus {
+     	background-color: #FF803E;
+    	color: #FFFFFF;
+      }
+    </style>
+    <script>
+    /*    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-48004119-1', 'dmhatre.com');
+    ga('send', 'pageview');*/
+     var _gaq = _gaq || [];
+     _gaq.push(['_setAccount', 'UA-48004119-1']);
+     _gaq.push(['_setDomainName', 'none']);
+     _gaq.push(['_setAllowLinker', true]);
+     _gaq.push(['_trackPageview']);
+
+     (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+	</script>
+  </head>
+  <body style="background-color:#9AD2FF;">
+    <div class="container-fluid">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Darpan Mhatre</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse" style="padding-right:20px;">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Resume
+              <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              	<li><a href="/downloadresume">Download Resume</a></li>
+                <li><a href="/summary">Summary</a></li>
+                <li><a href="/skills">Skills</a></li>
+                <li><a href="/experience">Experience</a></li>
+                <li><a href="/education">Education</a></li>
+              </ul>
+            </li>
+            <li><a href="#myModal" data-toggle="modal">Video Resume</a></li>
+            <li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/installnode">Installing nodejs on ubuntu 12</a></li>
+                <li><a href="/createnodejsserver">Create simple nodejs server</a></li>
+                <li><a href="/usescreen">Screen</a></li>
+                <li><a href="/installredis">Install Redis</a></li>
+                <li><a href="/javaservlet">Java Servlet</a></li>
+                <li><a href="/spring4mvc">Spring 4 MVC</a></li>
+              </ul>
+            </li>
+            <li><a href="/contactinfo">Contact Info</a></li>
+          </ul>
+        </div>
+    </nav>
+    <div class="row" style="padding-top:51px;">
+    	<div class="col-md-1"></div>
+    	<div class="col-md-10">
+        <h2>The following step-by-step tutorial will guide you to build simple web application using Spring 4 MVC</h2>
+        <h4>Note</h4>
+       	<ul>
+           <li>This tutorial assumes you know how to install and setup Java and tomcat</li>
+           <li>servlet 3.0 requires Java 1.6 or newer and tomcat 7</li>
+           <li>You can download complete project source from <a href="https://github.com/dmhatre/spring-tutorial" target="_blank">here</a></li>
+        </ul>
+        <h4>Requirements</h4>
+        <ul>
+           <li>Eclipse Luna</li>
+           <li>Java 1.7</li>
+           <li>Apache Tomcat 7</li>
+           <li>Spring 4 &#40;you can download libraries needed from <a href="http://repo.spring.io/libs-release/org/springframework/spring/4.0.0.RELEASE" target="_blank">here</a>&#41;</li>
+		   <li>Eclipse Tomcat Plugin &#40;Not required, but easy to debug the java code. You can download it from <a href="http://www.eclipsetotale.com/tomcatPlugin.html" target="_blank">here</a>&#41;</li>        
+        </ul>
+        <h4>Minimum jars required</h4>
+        <ul>
+        	<li>commons-logging-1.2.jar</li>
+        	<li>javax.servlet-api-3.1.0.jar</li>
+        	<li>jstl-1.2.jar</li>
+        	<li>spring-aop-4.0.0.RELEASE.jar</li>
+        	<li>spring-beans-4.0.0.RELEASE.jar</li>
+        	<li>spring-context-4.0.0.RELEASE.jar</li>
+        	<li>spring-core-4.0.0.RELEASE.jar</li>
+        	<li>spring-expression-4.0.0.RELEASE.jar</li>
+        	<li>spring-web-4.0.0.RELEASE.jar</li>
+        	<li>spring-webmvc-4.0.0.RELEASE.jar</li>
+        </ul>
+        <h3>1&#93; Set-up eclipse tomcat plugin</h3>
+        <p>Download tomcatPluginV331.zip, unzip it in eclipse_home&#47;dropins folder for eclipse luna 
+		   and restart eclipse. Three tomcat icons will appear in the tool bar of eclipse &#40;start, stop and restart&#41;.
+        </p>
+        <ul>
+			<li>Go to Eclipse&#45;&#62;Preferences&#45;&#62;Tomcat and select tomcat version which is version 7.x</li>
+			<li>browse and select tomcat home directory &#40;i.e.. where the tomcat is install&#41;</li>
+			<li>Select server.xml for Context declaration mode</li>
+			<li>click apply</li>
+			<li>Go to Eclipse&#45;&#62;Preferences&#45;&#62;Tomcat&#45;&#62;JVM Settings and make sure Java 1.7 is selected for JRE</li>
+		</ul>
+		<img src="../img/spring4mvc/img1.png" width="100%" height="100%" />
+		<div style="height:30px;"></div>
+		<img src="../img/spring4mvc/img6.png" width="100%" height="100%" />
+		<h3>2&#93; Create project</h3>
+		 <ul>
+			<li>Go to File&#45;&#62;New&#45;&#62;Dynamic Web Project</li>
+			<li>browse and select tomcat home directory &#40;i.e.. where the tomcat is install&#41;</li>
+			<li>Choose name for your project</li>
+			<li>Make sure you select 3.0 for Dynamic Web Module version and click finish</li>
+		</ul>
+		<img src="../img/spring4mvc/img2.png" width="100%" height="100%" />
+		<div style="height:20px;"></div>
+		<p>This will create bare structure for web application</p>
+		<div style="height:20px;"></div>
+		<img src="../img/spring4mvc/img3.png" width="100%" height="100%" />
+		<h3>3&#93; Lets start with web.xml. It is the first thing tomcat reads when application is deployed</h3>
+		<ul>
+			<li>Right click on WEB-INF folder&#45;&#62;New&#45;&#62;Other&#45;&#62;XML&#45;&#62;XML File. Click Next</li>
+			<li>Put file name as web.xml then click finish</li>
+			<li>This will create web.xml under WEB-INF folder</li>
+		</ul>
+		<h5>web.xml</h5>
+		<div style="background-color:#FFFFFF;padding:10px;border:1px dashed #563D7C;">
+		<p>
+		&#60;&#63;xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;&#63;&#62;<br>
+		&#60;web-app xmlns&#58;xsi=&#34;http:&#47;&#47;www.w3.org&#47;2001&#47;XMLSchema-instance&#34;<br>
+		xmlns=&#34;http&#58;&#47;&#47;java.sun.com&#47;xml&#47;ns&#47;javaee&#34;<br> 
+		xsi&#58;schemaLocation=&#34;http:&#47;&#47;java.sun.com&#47;xml&#47;ns&#47;javaee<br> 
+		http&#58;&#47;&#47;java.sun.com&#47;xml&#47;ns&#47;javaee&#47;web-app_3_0.xsd&#34; version=&#34;3.0&#34;&#62;<br>
+  		&nbsp;&nbsp;&nbsp;&nbsp;&#60;display-name&#62;spring-tutorial&#47;display-name&#62;<br>
+  		&nbsp;&nbsp;&nbsp;&nbsp;&#60;servlet&#62;<br>
+  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60;servlet-name&#62;tutorial&#60;&#47;servlet-name&#62;<br>
+  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60;servlet-class&#62;org.springframework.web.servlet.DispatcherServlet&#60;&#47;servlet-class&#62;<br>
+    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60;load-on-startup&#62;1&#60;&#47;load-on-startup&#62;<br>
+ 	 	&nbsp;&nbsp;&nbsp;&nbsp;&#60;&#47;servlet&#62;<br>
+  		&nbsp;&nbsp;&nbsp;&nbsp;&#60;servlet-mapping&#62;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60;servlet-name&#62;tutorial&#60;&#47;servlet-name&#62;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60;url-pattern&#62;*.html&#60;&#47;url-pattern&#62;<br>
+  		&#60;&#47;servlet-mapping&#62;<br>
+		&#60;&#47;web-app&#62;<br>
+		</p>
+		</div>
+		<div style="height:10px;"></div>
+		<p>So whenever there is a request for &#42;.html it goes to DispatcherServlet which is the front controller for spring MVC.</p>
+		<h3>4&#93; Lets create web application context file</h3>
+		<ul>
+			<li>Right click on WEB-INF folder&#45;&#62;New&#45;&#62;other&#45;&#62;XML&#45;&#62;XML File</li>
+			<li>Put file name as tutorial&#45;servlet.xml then click finish</li>
+		</ul>
+		<p>This file name should match the servlet name &#34;tutorial&#34; in the above web.xml file followed by &#45;servlet.xml i.e., the file name should be &#42;&#45;servlet.xml.</p>
+		<h5>tutorial&#45;servlet.xml</h5>
+		<div style="background-color:#FFFFFF;padding:10px;border:1px dashed #563D7C;">
+		<p>
+		&#60;&#63;xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;&#63;&#62;<br>
+		&#60;beans xmlns=&#34;http&#58;&#47;&#47;www.springframework.org&#47;schema&#47;beans&#34;<br>
+		xmlns&#58;xsi=&#34;http&#58;&#47;&#47;www.w3.org&#47;2001&#47;XMLSchema-instance&#34;<br>
+		xmlns&#58;p=&#34;http&#58;&#47;&#47;www.springframework.org&#47;schema&#47;p&#34;<br>
+		xmlns&#58;context=&#34;http:&#47;&#47;www.springframework.org&#47;schema&#47;context&#34;<br>
+		xsi&#58;schemaLocation=&#34;http:&#47;&#47;www.springframework.org&#47;schema&#47;beans<br>
+		http&#58;&#47;&#47;www.springframework.org&#47;schema&#47;beans&#47;spring-beans-4.0.xsd<br>
+		http&#58;&#47;&#47;www.springframework.org&#47;schema&#47;context<br>
+		http&#58;&#47;&#47;www.springframework.org&#47;schema&#47;context&#47;spring-context-4.0.xsd&#34;&#62;<br>
+		&#60;context&#58;component-scan base-package=&#34;com.tutorial.spring4&#34; &#47;&#62;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&#60;bean id=&#34;viewResolver&#34; class=&#34;org.springframework.web.servlet.view.UrlBasedViewResolver&#34;&#62;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&#60;property name=&#34;viewClass&#34; value=&#34;org.springframework.web.servlet.view.JstlView&#34; &#47;&#62;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60;property name=&#34;prefix&#34; value=&#34;&#47;WEB-INF&#47;jsp&#47;&#34; &#47;&#62;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60;property name=&#34;suffix&#34; value=&#34;.jsp&#34; &#47;&#62;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&#60;&#47;bean&#62;<br>
+		&#60;&#47;beans&#62;<br>
+		</p>
+		</div>
+		<p>So the base-package is the package where it will scan for controller classes &#40;which are annotted with &#64;Controller&#41;
+			The method in the controller will return the view. This view file will be under &#47;WEB-INF&#47;jsp&#47; with suffix .jsp
+		</p>
+		<h3>5&#93; Create a lib folder under WEB-INF if it was not created and put minimum required jars under lib folder</h3>
+		<ul>
+			<li>commons-logging-1.2.jar</li>
+			<li>javax.servlet-api-3.1.0.jar</li>
+			<li>jstl-1.2.jar</li>
+			<li>spring-aop-4.0.0.RELEASE.jar</li>
+			<li>spring-beans-4.0.0.RELEASE.jar</li>
+			<li>spring-context-4.0.0.RELEASE.jar</li>
+			<li>spring-core-4.0.0.RELEASE.jar</li>
+			<li>spring-expression-4.0.0.RELEASE.jar</li>
+			<li>spring-web-4.0.0.RELEASE.jar</li>
+			<li>spring-webmvc-4.0.0.RELEASE.jar</li>
+		</ul>
+		<img src="../img/spring4mvc/img7.png" width="100%" height="100%" />
+		<h3>6&#93; Now lets create package</h3>
+		<ul>
+			<li>Right click on src&#45;&#62;New&#45;&#62;Package and name it as com.tutorial.spring4</li>
+		</ul>
+		<img src="../img/spring4mvc/img4.png" width="100%" height="100%" />
+		<h3>7&#93; Now lets create controller class</h3>
+		<ul>
+			<li>Right click on package com.tutorial.spring4&#45;&#62;New&#45;&#62;Class and name it as MyController</li>
+		</ul>
+		<img src="../img/spring4mvc/img5.png" width="100%" height="100%" />
+		<h5>MyController.java</h5>
+		<div style="background-color:#FFFFFF;padding:10px;border:1px dashed #563D7C;">
+		<p>
+			package com.tutorial.spring4;<br><br>
+			import org.springframework.stereotype.Controller;<br>
+			import org.springframework.web.bind.annotation.RequestMapping;<br>
+			import org.springframework.web.servlet.ModelAndView;<br><br>
+			&#64;Controller<br>
+			public class MyController &#123;<br><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&#64;RequestMapping&#40;&#34;&#47;welcome&#34;&#41;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;public ModelAndView helloWorld&#40;&#41; &#123;<br><br>
+ 			&nbsp;&nbsp;&nbsp;&nbsp;String message = &#34;&#60;div style=&#39;text-align&#58;center;&#39;&#62;&#34;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#43;&nbsp;&#34;&#60;h3&#62;Hello World, Spring MVC Tutorial&#60;&#47;h3&#62;&#34;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#43;&nbsp;&#34;This message is coming from MyController.java&#60;&#47;div&#62;&#34;&#59;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;return new ModelAndView&#40;&#34;welcome&#34;, &#34;message&#34;, message&#41;&#59;<br>
+			&#125;<br>
+			&#125;<br>
+		</p>
+		</div>
+		<h3>8&#93; Create View</h3>
+		<p>Now create folder jsp under WEB-INF and then create welcome.jsp under jsp folder</p>
+		<h5>welcome.jsp</h5>
+		<div style="background-color:#FFFFFF;padding:10px;border:1px dashed #563D7C;">
+		<p>
+			&#60;html&#62;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&#60;head&#62;&#60;title&#62;Spring MVC Tutorial&#60;&#47;title&#62;&#60;&#47;head&#62;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&#60;body&#62;&#36;&#123;message&#125;&#60;&#47;body&#62;<br>
+			&#60;&#47;html&#62;<br>
+		</p>
+		</div>
+		<h3>9&#93; Build the project</h3>
+		<p>As we selected server.xml for Context declaration mode in Step 1, lets configure <b>server.xml</b> in the folder <b>tomcat_home&#47;conf&#47;</b></p>
+		<p>Add this line inside <b>&#60;host&#62;</b> tag</p>
+		<p><b>&#60;Context docBase&#61;&#34;&#47;Users&#47;darpanmhatre&#47;spring4&#47;workspace_tutorial&#47;spring-tutorial&#47;WebContent&#34; path&#61;&#34;&#47;spring4&#34;&#62;&#60;&#47;Context&#62;</b></p>
+		<br><p>Also make sure you select <b>Default output folder&#58;</b></p>
+		<p><b>spring-tutorial&#47;WebContent&#47;WEB-INF&#47;classes</b></p>
+		<p>This is the folder where all the compiled code will be generated</p>
+ 		<img src="../img/spring4mvc/img8.png" width="100%" height="100%" />
+		<p>Now go to eclipse tool bar <b>Project</b> and then click <b>Clean</b>. This will remove old files and recompile the project and move the compiled code under WEB-INF&#47;classes.</p>
+		<h3>10&#93; Run the application with tomcat server</h3>
+		<p>Now run the server by clicking the tomcat icon in eclipse tool bar</p>
+		<img src="../img/spring4mvc/img9.png" width="100%" height="100%" />
+		<h3>11&#93; Access the application</h3>
+		<p>http&#58;&#47;&#47;localhost&#58;8080&#47;spring4&#47;welcome.html</p>
+		<img src="../img/spring4mvc/img10.png" width="100%" height="100%" />
+		</div>
+        <div class="col-md-1"></div>
+    </div>
+    </div>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Video Resume</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Coming soon, Keep watching this space.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
