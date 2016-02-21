@@ -82,3 +82,7 @@ exports.engagement = function(req, res) {
 exports.gallery = function(req, res) {
 	res.render('gallery');
 };
+
+exports.spring4mvc = function(req, res) {
+	res.render('spring4mvc');
+};
