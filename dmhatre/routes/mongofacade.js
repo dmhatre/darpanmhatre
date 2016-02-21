@@ -12,7 +12,7 @@ exports.mf_insert = function(req, res) {
 			var MongoClient = require('mongodb').MongoClient;
 
 			// Connect to the db
-			MongoClient.connect("mongodb://", function(
+			MongoClient.connect("mongodb://127.0.0.1:27017/mydb", function(
 					err, db) {
 				if (!err) {
 					console.log("We are connected");
@@ -21,7 +21,8 @@ exports.mf_insert = function(req, res) {
 						if (!err) {
 							var collection = db.collection('ipaddress');
 							var doc1 = {
-								'ipaddress' : req.connection.remoteAddress
+								'ipaddress' : req.connection.remoteAddress,
+								'current_date': new Date()
 							};
 							collection.insert(doc1, function(err, result) {
 								if(!err){
@@ -47,7 +48,7 @@ exports.mf_insert = function(req, res) {
 			var MongoClient = require('mongodb').MongoClient;
 
 			// Connect to the db
-			MongoClient.connect("mongodb://", function(
+			MongoClient.connect("mongodb://127.0.0.1:27017/mydb", function(
 					err, db) {
 				if (!err) {
 					console.log("We are connected");
@@ -56,7 +57,8 @@ exports.mf_insert = function(req, res) {
 						if (!err) {
 							var collection = db.collection('ipaddress');
 							var doc1 = {
-								'ipaddress' : '0'
+								'ipaddress' : '0',
+								'current_date': new Date()
 							};
 							collection.insert(doc1, function(err, result) {
 								if(!err){
@@ -93,7 +95,7 @@ exports.mf_getIpAddresses = function(req, res) {
 			var MongoClient = require('mongodb').MongoClient;
 
 			// Connect to the db
-			MongoClient.connect("mongodb://", function(
+			MongoClient.connect("mongodb://127.0.0.1:27017/mydb", function(
 			err, db) {
 				if (!err) {
 					console.log("We are connected");
@@ -103,32 +105,10 @@ exports.mf_getIpAddresses = function(req, res) {
 							var collection = db.collection('ipaddress');
 							collection.distinct('ipaddress', function(err, results) {
 								if(!err) {
-									returndata = results;
-									var geoip = require('geoip-lite');
-									var j=0;
-									var t=0;
-									for(var i=0;i<returndata.length;i++) {
-										if(returndata[i] != null && returndata != 'null' && returndata != 'NULL'){				
-											console.log(returndata[i]);
-											var geo = geoip.lookup(returndata[i]);
-											if(geo) {
-												var returndatag = {	"lat":geo.ll[0],
-																	"lon":geo.ll[1], 
-																	"country": geo.country,
-																	"city": geo.city,
-																	"ip": returndata[i]};
-												returndataf[j] = returndatag;
-												j++;
-											} else {
-												console.log("#### no geo - "+(t++));
-											}
-										}
-									}
-									res.json(returndataf);
+									res.json(results);
 								} else {
 									console.log(err);
 								} 
-						        // Let's close the db
 						        db.close();
 						     });
 						} else {
