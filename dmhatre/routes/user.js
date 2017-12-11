@@ -47,42 +47,22 @@ exports.javaservlet = function(req, res) {
 	res.render('javaservlet');
 };
 
-exports.rome = function(req, res) {
-	res.render('rome');
-};
-
-exports.nice = function(req, res) {
-	res.render('nice');
-};
-
-exports.versailles = function(req, res) {
-	res.render('versailles');
-};
-
-exports.paris = function(req, res) {
-	res.render('paris');
-};
-
-exports.weddingreception = function(req, res) {
-	res.render('weddingreception');
-};
-
-exports.weddingvows = function(req, res) {
-	res.render('weddingvows');
-};
-
-exports.prewedding = function(req, res) {
-	res.render('prewedding');
-};
-
-exports.engagement = function(req, res) {
-	res.render('engagement');
-};
-
-exports.gallery = function(req, res) {
-	res.render('gallery');
-};
-
 exports.spring4mvc = function(req, res) {
 	res.render('spring4mvc');
+};
+
+exports.awselasticbeanstalk = function(req, res) {
+	res.render('awselasticbeanstalk');
+};
+
+exports.springbootmysql = function(req, res) {
+	res.render('spring-boot-mysql');
+};
+
+exports.springbootoauth2 = function(req, res) {
+	res.render('spring-boot-oauth2');
+};
+
+exports.d3jsdemo = function(req, res) {
+	res.render('d3jsdemonew');
 };

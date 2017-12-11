@@ -12,11 +12,11 @@ exports.mf_insert = function(req, res) {
 			var MongoClient = require('mongodb').MongoClient;
 
 			// Connect to the db
-			MongoClient.connect("mongodb://127.0.0.1:27017/mydb", function(
+			MongoClient.connect("mongodb://127.0.0.1:27017/dbname", function(
 					err, db) {
 				if (!err) {
 					console.log("We are connected");
-					db.authenticate('', '', function(err,
+					db.authenticate('user', 'password', function(err,
 							result) {
 						if (!err) {
 							var collection = db.collection('ipaddress');
@@ -48,11 +48,11 @@ exports.mf_insert = function(req, res) {
 			var MongoClient = require('mongodb').MongoClient;
 
 			// Connect to the db
-			MongoClient.connect("mongodb://127.0.0.1:27017/mydb", function(
+			MongoClient.connect("mongodb://127.0.0.1:27017/dbname", function(
 					err, db) {
 				if (!err) {
 					console.log("We are connected");
-					db.authenticate('', '', function(err,
+					db.authenticate('user', 'password', function(err,
 							result) {
 						if (!err) {
 							var collection = db.collection('ipaddress');
@@ -95,11 +95,11 @@ exports.mf_getIpAddresses = function(req, res) {
 			var MongoClient = require('mongodb').MongoClient;
 
 			// Connect to the db
-			MongoClient.connect("mongodb://127.0.0.1:27017/mydb", function(
+			MongoClient.connect("mongodb://127.0.0.1:27017/dbname", function(
 			err, db) {
 				if (!err) {
 					console.log("We are connected");
-					db.authenticate('', '', function(err,
+					db.authenticate('user', 'password', function(err,
 							result) {
 						if (!err) {
 							var collection = db.collection('ipaddress');
