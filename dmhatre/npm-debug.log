@@ -1,0 +1,486 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.3.17
+3 info using node@v0.10.23
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/Users/darpanmhatre/git/darpanmhatre/dmhatre',
+5 verbose install   [ 'express', 'ejs', 'express-mongo-db', 'mongodb' ] ]
+6 info preinstall dmhatre@0.0.1
+7 verbose readDependencies using package.json deps
+8 verbose already installed skipping express@3.2.6 /Users/darpanmhatre/git/darpanmhatre/dmhatre
+9 verbose already installed skipping ejs@* /Users/darpanmhatre/git/darpanmhatre/dmhatre
+10 verbose cache add [ 'express-mongo-db@~0.4.0', null ]
+11 verbose cache add name=undefined spec="express-mongo-db@~0.4.0" args=["express-mongo-db@~0.4.0",null]
+12 verbose parsed url { protocol: null,
+12 verbose parsed url   slashes: null,
+12 verbose parsed url   auth: null,
+12 verbose parsed url   host: null,
+12 verbose parsed url   port: null,
+12 verbose parsed url   hostname: null,
+12 verbose parsed url   hash: null,
+12 verbose parsed url   search: null,
+12 verbose parsed url   query: null,
+12 verbose parsed url   pathname: 'express-mongo-db@~0.4.0',
+12 verbose parsed url   path: 'express-mongo-db@~0.4.0',
+12 verbose parsed url   href: 'express-mongo-db@~0.4.0' }
+13 verbose cache add name="express-mongo-db" spec="~0.4.0" args=["express-mongo-db","~0.4.0"]
+14 verbose parsed url { protocol: null,
+14 verbose parsed url   slashes: null,
+14 verbose parsed url   auth: null,
+14 verbose parsed url   host: null,
+14 verbose parsed url   port: null,
+14 verbose parsed url   hostname: null,
+14 verbose parsed url   hash: null,
+14 verbose parsed url   search: null,
+14 verbose parsed url   query: null,
+14 verbose parsed url   pathname: '~0.4.0',
+14 verbose parsed url   path: '~0.4.0',
+14 verbose parsed url   href: '~0.4.0' }
+15 verbose addNamed [ 'express-mongo-db', '~0.4.0' ]
+16 verbose addNamed [ null, '>=0.4.0-0 <0.5.0-0' ]
+17 verbose already installed skipping mongodb@~1.4.7 /Users/darpanmhatre/git/darpanmhatre/dmhatre
+18 silly lockFile 378f2c29-express-mongo-db-0-4-0 express-mongo-db@~0.4.0
+19 verbose lock express-mongo-db@~0.4.0 /tmp/npm-501/.npm/378f2c29-express-mongo-db-0-4-0.lock
+20 silly addNameRange { name: 'express-mongo-db',
+20 silly addNameRange   range: '>=0.4.0-0 <0.5.0-0',
+20 silly addNameRange   hasData: false }
+21 verbose url raw express-mongo-db
+22 verbose url resolving [ 'https://registry.npmjs.org/', './express-mongo-db' ]
+23 verbose url resolved https://registry.npmjs.org/express-mongo-db
+24 info trying registry request attempt 1 at 01:06:14
+25 http GET https://registry.npmjs.org/express-mongo-db
+26 http 200 https://registry.npmjs.org/express-mongo-db
+27 silly registry.get cb [ 200,
+27 silly registry.get   { server: 'nginx/1.10.1',
+27 silly registry.get     'content-type': 'application/json',
+27 silly registry.get     'last-modified': 'Sun, 24 Sep 2017 13:05:59 GMT',
+27 silly registry.get     etag: '"59c7adb7-4b58"',
+27 silly registry.get     'cache-control': 'max-age=300',
+27 silly registry.get     'content-length': '19288',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     date: 'Fri, 10 Nov 2017 06:06:15 GMT',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     age: '0',
+27 silly registry.get     connection: 'keep-alive',
+27 silly registry.get     'x-served-by': 'cache-jfk8122-JFK',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1510293975.310460,VS0,VE83',
+27 silly registry.get     vary: 'Accept-Encoding, Accept' } ]
+28 silly addNameRange number 2 { name: 'express-mongo-db',
+28 silly addNameRange   range: '>=0.4.0-0 <0.5.0-0',
+28 silly addNameRange   hasData: true }
+29 silly addNameRange versions [ 'express-mongo-db',
+29 silly addNameRange   [ '0.1.0',
+29 silly addNameRange     '0.1.1',
+29 silly addNameRange     '0.2.0',
+29 silly addNameRange     '0.2.1',
+29 silly addNameRange     '0.2.2',
+29 silly addNameRange     '0.3.0',
+29 silly addNameRange     '0.3.1',
+29 silly addNameRange     '0.4.0',
+29 silly addNameRange     '1.0.0',
+29 silly addNameRange     '2.0.0',
+29 silly addNameRange     '2.0.1',
+29 silly addNameRange     '2.0.2',
+29 silly addNameRange     '2.0.3' ] ]
+30 verbose addNamed [ 'express-mongo-db', '0.4.0' ]
+31 verbose addNamed [ '0.4.0', '0.4.0' ]
+32 silly lockFile e8469b03-express-mongo-db-0-4-0 express-mongo-db@0.4.0
+33 verbose lock express-mongo-db@0.4.0 /tmp/npm-501/.npm/e8469b03-express-mongo-db-0-4-0.lock
+34 silly lockFile 40411d7a-go-db-express-mongo-db-0-4-0-tgz https://registry.npmjs.org/express-mongo-db/-/express-mongo-db-0.4.0.tgz
+35 verbose lock https://registry.npmjs.org/express-mongo-db/-/express-mongo-db-0.4.0.tgz /tmp/npm-501/.npm/40411d7a-go-db-express-mongo-db-0-4-0-tgz.lock
+36 verbose addRemoteTarball [ 'https://registry.npmjs.org/express-mongo-db/-/express-mongo-db-0.4.0.tgz',
+36 verbose addRemoteTarball   '80289a5905b737e345cd521517a1315a400ca912' ]
+37 info retry fetch attempt 1 at 01:06:15
+38 verbose fetch to= /tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/tmp.tgz
+39 http GET https://registry.npmjs.org/express-mongo-db/-/express-mongo-db-0.4.0.tgz
+40 http 200 https://registry.npmjs.org/express-mongo-db/-/express-mongo-db-0.4.0.tgz
+41 verbose tar unpack /tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/tmp.tgz
+42 silly lockFile 16634482-975433-0-617993594147265-package tar:///tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/package
+43 verbose lock tar:///tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/package /tmp/npm-501/.npm/16634482-975433-0-617993594147265-package.lock
+44 silly lockFile 307c2975-975433-0-617993594147265-tmp-tgz tar:///tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/tmp.tgz
+45 verbose lock tar:///tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/tmp.tgz /tmp/npm-501/.npm/307c2975-975433-0-617993594147265-tmp-tgz.lock
+46 silly gunzTarPerm modes [ '755', '644' ]
+47 silly gunzTarPerm extractEntry package.json
+48 silly gunzTarPerm extractEntry .npmignore
+49 silly gunzTarPerm extractEntry README.md
+50 silly gunzTarPerm extractEntry index.js
+51 silly gunzTarPerm extractEntry .editorconfig
+52 silly gunzTarPerm extractEntry .gitattributes
+53 silly gunzTarPerm extractEntry .jshintrc
+54 silly gunzTarPerm extractEntry .travis.yml
+55 silly gunzTarPerm extractEntry test/connection.js
+56 silly lockFile 16634482-975433-0-617993594147265-package tar:///tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/package
+57 silly lockFile 16634482-975433-0-617993594147265-package tar:///tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/package
+58 silly lockFile 307c2975-975433-0-617993594147265-tmp-tgz tar:///tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/tmp.tgz
+59 silly lockFile 307c2975-975433-0-617993594147265-tmp-tgz tar:///tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/tmp.tgz
+60 verbose tar pack [ '/tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz',
+60 verbose tar pack   '/tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/package' ]
+61 verbose tarball /tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz
+62 verbose folder /tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/package
+63 silly lockFile 16634482-975433-0-617993594147265-package tar:///tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/package
+64 verbose lock tar:///tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/package /tmp/npm-501/.npm/16634482-975433-0-617993594147265-package.lock
+65 silly lockFile 4b4e38b6-press-mongo-db-0-4-0-package-tgz tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz
+66 verbose lock tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz /tmp/npm-501/.npm/4b4e38b6-press-mongo-db-0-4-0-package-tgz.lock
+67 silly lockFile 16634482-975433-0-617993594147265-package tar:///tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/package
+68 silly lockFile 16634482-975433-0-617993594147265-package tar:///tmp/npm-12494-m1wUv1Z1/1510293975433-0.617993594147265/package
+69 silly lockFile 4b4e38b6-press-mongo-db-0-4-0-package-tgz tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz
+70 silly lockFile 4b4e38b6-press-mongo-db-0-4-0-package-tgz tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz
+71 silly lockFile 96ac1863-m-express-mongo-db-0-4-0-package /tmp/npm-501/.npm/express-mongo-db/0.4.0/package
+72 verbose lock /tmp/npm-501/.npm/express-mongo-db/0.4.0/package /tmp/npm-501/.npm/96ac1863-m-express-mongo-db-0-4-0-package.lock
+73 silly lockFile 96ac1863-m-express-mongo-db-0-4-0-package /tmp/npm-501/.npm/express-mongo-db/0.4.0/package
+74 silly lockFile 96ac1863-m-express-mongo-db-0-4-0-package /tmp/npm-501/.npm/express-mongo-db/0.4.0/package
+75 verbose tar unpack /tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz
+76 silly lockFile 7781518e-m-express-mongo-db-0-4-0-package tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package
+77 verbose lock tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package /tmp/npm-501/.npm/7781518e-m-express-mongo-db-0-4-0-package.lock
+78 silly lockFile 4b4e38b6-press-mongo-db-0-4-0-package-tgz tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz
+79 verbose lock tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz /tmp/npm-501/.npm/4b4e38b6-press-mongo-db-0-4-0-package-tgz.lock
+80 silly gunzTarPerm modes [ '755', '644' ]
+81 silly gunzTarPerm extractEntry package.json
+82 silly gunzTarPerm extractEntry .npmignore
+83 silly gunzTarPerm extractEntry README.md
+84 silly gunzTarPerm extractEntry index.js
+85 silly gunzTarPerm extractEntry .editorconfig
+86 silly gunzTarPerm extractEntry .gitattributes
+87 silly gunzTarPerm extractEntry .jshintrc
+88 silly gunzTarPerm extractEntry .travis.yml
+89 silly gunzTarPerm extractEntry test/connection.js
+90 silly lockFile 7781518e-m-express-mongo-db-0-4-0-package tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package
+91 silly lockFile 7781518e-m-express-mongo-db-0-4-0-package tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package
+92 silly lockFile 4b4e38b6-press-mongo-db-0-4-0-package-tgz tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz
+93 silly lockFile 4b4e38b6-press-mongo-db-0-4-0-package-tgz tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz
+94 verbose chmod /tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz 644
+95 verbose chown /tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz [ 501, 20 ]
+96 silly lockFile 40411d7a-go-db-express-mongo-db-0-4-0-tgz https://registry.npmjs.org/express-mongo-db/-/express-mongo-db-0.4.0.tgz
+97 silly lockFile 40411d7a-go-db-express-mongo-db-0-4-0-tgz https://registry.npmjs.org/express-mongo-db/-/express-mongo-db-0.4.0.tgz
+98 silly lockFile e8469b03-express-mongo-db-0-4-0 express-mongo-db@0.4.0
+99 silly lockFile e8469b03-express-mongo-db-0-4-0 express-mongo-db@0.4.0
+100 silly lockFile 378f2c29-express-mongo-db-0-4-0 express-mongo-db@~0.4.0
+101 silly lockFile 378f2c29-express-mongo-db-0-4-0 express-mongo-db@~0.4.0
+102 silly resolved [ { name: 'express-mongo-db',
+102 silly resolved     version: '0.4.0',
+102 silly resolved     description: 'Mongodb connection middleware for express',
+102 silly resolved     main: 'index.js',
+102 silly resolved     scripts:
+102 silly resolved      { test: 'istanbul test _mocha --report html -- test/*.js -R spec -t 1000',
+102 silly resolved        coveralls: 'istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- test/*.js -R spec -t 1000 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage' },
+102 silly resolved     repository:
+102 silly resolved      { type: 'git',
+102 silly resolved        url: 'http://github.com/floatdrop/express-mongo-db' },
+102 silly resolved     dependencies: { 'connect-once': '~0.1.0' },
+102 silly resolved     devDependencies:
+102 silly resolved      { coveralls: '~2.6.0',
+102 silly resolved        istanbul: '~0.1.44',
+102 silly resolved        mocha: '~1.15.1',
+102 silly resolved        'mocha-lcov-reporter': '0.0.1',
+102 silly resolved        mongodb: '^1.4.7',
+102 silly resolved        should: '~3.0.1' },
+102 silly resolved     keywords: [ 'mongodb', 'express', 'middleware' ],
+102 silly resolved     author: { name: 'Vsevolod Strukchinsky' },
+102 silly resolved     license: 'MIT',
+102 silly resolved     readme: '# express-mongo-db\n[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url]\n> Connect once and memorize connection for next usages\n\nMiddleware that netowork-flaps and shit aware.\n\n## Usage\n\nFirst - install middleware in project:\n\n```npm i express-mongo-db mongodb --save```\n\nSecond - add middleware to express application:\n\n```javascript\nvar app = require(\'express\')();\napp.use(require(\'express-mongo-db\')(require(\'mongodb\')));\n```\n\nNow you got `req.db` object of Mongodb database in every request handler.\n\n## API\n\n#### express-mongo-db(mongodb, [options])\n\nCreates middleware with passed mongodb module instance (this is useful for promisification).\n\n## Options\n\nYou can pass options to constructor of middleware function like this: `require(\'express-mongo-db\')(options)` where `options` is an object with fields described below.\n\nAlso you can modify defaults value in `config` property of middleware contructor like this:\n\n```javascript\nvar mongodb = require(\'express-mongo-db\');\nmongodb.config.readPreference = \'secondary\';\n\nvar app = require(\'express\')();\napp.use(mongodb(require(\'mongodb\')));\n\napp.get(\'/\', function(req, res) {\n    req.db.find(/* ... */);\n});\n\n```\n\n * `host` - server or replica string (default: `localhost`, but can be `server.one.com:123,server.two.com:456`)\n * `db` - name of database (default: `test`)\n * `options` - object, that passed to [MongoClient.connect](http://mongodb.github.io/node-mongodb-native/driver-articles/mongoclient.html#read-preference).\n * And all options from [connect-once](https://github.com/floatdrop/connect-once), such as `reconnectWait` and `heartbeat` function.\n\n\n## Events\n\nTo know what\'s up in your life, we provide event-emitter to listen to. For example - this is how you know, that reconnecton happening:\n\n```javascript\nvar mongodb = require(\'express-mongo-db\')(require(\'mongodb\'), options);\nmongodb.connection.on(\'reconnect\', function(err) {\n    console.log("Reconnecting to mongo (" + this.retries + " retries left). " + (err.stack ? err.stack : err));\n});\n```\n\nAlso you can subscribe on connection event:\n\n```javascript\nvar mongodb = require(\'express-mongo-db\')(require(\'mongodb\'), options);\nmongodb.connection.when(\'available\', function(err, db) {\n\n});\n```\n\n`express-mongo-db` will start attempts to connect straight after require.\n\n[npm-url]: https://npmjs.org/package/express-mongo-db\n[npm-image]: https://badge.fury.io/js/express-mongo-db.png\n\n[travis-url]: http://travis-ci.org/floatdrop/express-mongo-db\n[travis-image]: https://travis-ci.org/floatdrop/express-mongo-db.png?branch=master\n\n[coveralls-url]: https://coveralls.io/r/floatdrop/express-mongo-db\n[coveralls-image]: https://coveralls.io/repos/floatdrop/express-mongo-db/badge.png\n\n[depstat-url]: https://david-dm.org/floatdrop/express-mongo-db\n[depstat-image]: https://david-dm.org/floatdrop/express-mongo-db.png?theme=shields.io\n',
+102 silly resolved     readmeFilename: 'README.md',
+102 silly resolved     bugs: { url: 'https://github.com/floatdrop/express-mongo-db/issues' },
+102 silly resolved     homepage: 'https://github.com/floatdrop/express-mongo-db',
+102 silly resolved     _id: 'express-mongo-db@0.4.0',
+102 silly resolved     dist: { shasum: '226f0f2586c91e16fdc53663b5da79f3b58a6274' },
+102 silly resolved     _from: 'express-mongo-db@~0.4.0',
+102 silly resolved     _resolved: 'https://registry.npmjs.org/express-mongo-db/-/express-mongo-db-0.4.0.tgz' } ]
+103 info install express-mongo-db@0.4.0 into /Users/darpanmhatre/git/darpanmhatre/dmhatre
+104 info installOne express-mongo-db@0.4.0
+105 info /Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db unbuild
+106 verbose tar unpack /tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz
+107 silly lockFile 4b2439d7-re-node-modules-express-mongo-db tar:///Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db
+108 verbose lock tar:///Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db /tmp/npm-501/.npm/4b2439d7-re-node-modules-express-mongo-db.lock
+109 silly lockFile 4b4e38b6-press-mongo-db-0-4-0-package-tgz tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz
+110 verbose lock tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz /tmp/npm-501/.npm/4b4e38b6-press-mongo-db-0-4-0-package-tgz.lock
+111 silly gunzTarPerm modes [ '755', '644' ]
+112 silly gunzTarPerm extractEntry package.json
+113 silly gunzTarPerm extractEntry .npmignore
+114 silly gunzTarPerm extractEntry README.md
+115 silly gunzTarPerm extractEntry index.js
+116 silly gunzTarPerm extractEntry .editorconfig
+117 silly gunzTarPerm extractEntry .gitattributes
+118 silly gunzTarPerm extractEntry .jshintrc
+119 silly gunzTarPerm extractEntry .travis.yml
+120 silly gunzTarPerm extractEntry test/connection.js
+121 silly lockFile 4b2439d7-re-node-modules-express-mongo-db tar:///Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db
+122 silly lockFile 4b2439d7-re-node-modules-express-mongo-db tar:///Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db
+123 silly lockFile 4b4e38b6-press-mongo-db-0-4-0-package-tgz tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz
+124 silly lockFile 4b4e38b6-press-mongo-db-0-4-0-package-tgz tar:///tmp/npm-501/.npm/express-mongo-db/0.4.0/package.tgz
+125 info preinstall express-mongo-db@0.4.0
+126 verbose readDependencies using package.json deps
+127 verbose readDependencies using package.json deps
+128 verbose cache add [ 'connect-once@~0.1.0', null ]
+129 verbose cache add name=undefined spec="connect-once@~0.1.0" args=["connect-once@~0.1.0",null]
+130 verbose parsed url { protocol: null,
+130 verbose parsed url   slashes: null,
+130 verbose parsed url   auth: null,
+130 verbose parsed url   host: null,
+130 verbose parsed url   port: null,
+130 verbose parsed url   hostname: null,
+130 verbose parsed url   hash: null,
+130 verbose parsed url   search: null,
+130 verbose parsed url   query: null,
+130 verbose parsed url   pathname: 'connect-once@~0.1.0',
+130 verbose parsed url   path: 'connect-once@~0.1.0',
+130 verbose parsed url   href: 'connect-once@~0.1.0' }
+131 verbose cache add name="connect-once" spec="~0.1.0" args=["connect-once","~0.1.0"]
+132 verbose parsed url { protocol: null,
+132 verbose parsed url   slashes: null,
+132 verbose parsed url   auth: null,
+132 verbose parsed url   host: null,
+132 verbose parsed url   port: null,
+132 verbose parsed url   hostname: null,
+132 verbose parsed url   hash: null,
+132 verbose parsed url   search: null,
+132 verbose parsed url   query: null,
+132 verbose parsed url   pathname: '~0.1.0',
+132 verbose parsed url   path: '~0.1.0',
+132 verbose parsed url   href: '~0.1.0' }
+133 verbose addNamed [ 'connect-once', '~0.1.0' ]
+134 verbose addNamed [ null, '>=0.1.0-0 <0.2.0-0' ]
+135 silly lockFile daeaa60d-connect-once-0-1-0 connect-once@~0.1.0
+136 verbose lock connect-once@~0.1.0 /tmp/npm-501/.npm/daeaa60d-connect-once-0-1-0.lock
+137 silly addNameRange { name: 'connect-once',
+137 silly addNameRange   range: '>=0.1.0-0 <0.2.0-0',
+137 silly addNameRange   hasData: false }
+138 verbose url raw connect-once
+139 verbose url resolving [ 'https://registry.npmjs.org/', './connect-once' ]
+140 verbose url resolved https://registry.npmjs.org/connect-once
+141 info trying registry request attempt 1 at 01:06:15
+142 http GET https://registry.npmjs.org/connect-once
+143 http 200 https://registry.npmjs.org/connect-once
+144 silly registry.get cb [ 200,
+144 silly registry.get   { server: 'nginx/1.10.1',
+144 silly registry.get     'content-type': 'application/json',
+144 silly registry.get     'last-modified': 'Sat, 20 Sep 2014 15:06:50 GMT',
+144 silly registry.get     etag: '"541d980a-2a44"',
+144 silly registry.get     'cache-control': 'max-age=300',
+144 silly registry.get     'content-length': '10820',
+144 silly registry.get     'accept-ranges': 'bytes',
+144 silly registry.get     date: 'Fri, 10 Nov 2017 06:06:15 GMT',
+144 silly registry.get     via: '1.1 varnish',
+144 silly registry.get     age: '0',
+144 silly registry.get     connection: 'keep-alive',
+144 silly registry.get     'x-served-by': 'cache-jfk8125-JFK',
+144 silly registry.get     'x-cache': 'MISS',
+144 silly registry.get     'x-cache-hits': '0',
+144 silly registry.get     'x-timer': 'S1510293976.938159,VS0,VE7',
+144 silly registry.get     vary: 'Accept-Encoding, Accept' } ]
+145 silly addNameRange number 2 { name: 'connect-once',
+145 silly addNameRange   range: '>=0.1.0-0 <0.2.0-0',
+145 silly addNameRange   hasData: true }
+146 silly addNameRange versions [ 'connect-once',
+146 silly addNameRange   [ '0.0.1', '0.0.2', '0.0.3', '0.1.0', '0.1.1' ] ]
+147 verbose addNamed [ 'connect-once', '0.1.1' ]
+148 verbose addNamed [ '0.1.1', '0.1.1' ]
+149 silly lockFile 89457a72-connect-once-0-1-1 connect-once@0.1.1
+150 verbose lock connect-once@0.1.1 /tmp/npm-501/.npm/89457a72-connect-once-0-1-1.lock
+151 silly lockFile 44a0c1b8-nect-once-connect-once-0-1-1-tgz https://registry.npmjs.org/connect-once/-/connect-once-0.1.1.tgz
+152 verbose lock https://registry.npmjs.org/connect-once/-/connect-once-0.1.1.tgz /tmp/npm-501/.npm/44a0c1b8-nect-once-connect-once-0-1-1-tgz.lock
+153 verbose addRemoteTarball [ 'https://registry.npmjs.org/connect-once/-/connect-once-0.1.1.tgz',
+153 verbose addRemoteTarball   'eeb456305e039b8425db2ccb97322aea37c2b71c' ]
+154 info retry fetch attempt 1 at 01:06:15
+155 verbose fetch to= /tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/tmp.tgz
+156 http GET https://registry.npmjs.org/connect-once/-/connect-once-0.1.1.tgz
+157 http 200 https://registry.npmjs.org/connect-once/-/connect-once-0.1.1.tgz
+158 verbose tar unpack /tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/tmp.tgz
+159 silly lockFile 9e5c9322-5960-0-03492062701843679-package tar:///tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/package
+160 verbose lock tar:///tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/package /tmp/npm-501/.npm/9e5c9322-5960-0-03492062701843679-package.lock
+161 silly lockFile 98b46ae6-5960-0-03492062701843679-tmp-tgz tar:///tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/tmp.tgz
+162 verbose lock tar:///tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/tmp.tgz /tmp/npm-501/.npm/98b46ae6-5960-0-03492062701843679-tmp-tgz.lock
+163 silly gunzTarPerm modes [ '755', '644' ]
+164 silly gunzTarPerm extractEntry package.json
+165 silly gunzTarPerm extractEntry .npmignore
+166 silly gunzTarPerm extractEntry README.md
+167 silly gunzTarPerm extractEntry gulpfile.js
+168 silly gunzTarPerm extractEntry index.js
+169 silly gunzTarPerm extractEntry .editorconfig
+170 silly gunzTarPerm extractEntry .jshintrc
+171 silly gunzTarPerm extractEntry .travis.yml
+172 silly gunzTarPerm extractEntry test/connection.js
+173 silly gunzTarPerm extractEntry test/constructor.js
+174 silly gunzTarPerm extractEntry test/heartbeat.js
+175 silly lockFile 9e5c9322-5960-0-03492062701843679-package tar:///tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/package
+176 silly lockFile 9e5c9322-5960-0-03492062701843679-package tar:///tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/package
+177 silly lockFile 98b46ae6-5960-0-03492062701843679-tmp-tgz tar:///tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/tmp.tgz
+178 silly lockFile 98b46ae6-5960-0-03492062701843679-tmp-tgz tar:///tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/tmp.tgz
+179 verbose tar pack [ '/tmp/npm-501/.npm/connect-once/0.1.1/package.tgz',
+179 verbose tar pack   '/tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/package' ]
+180 verbose tarball /tmp/npm-501/.npm/connect-once/0.1.1/package.tgz
+181 verbose folder /tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/package
+182 silly lockFile 9e5c9322-5960-0-03492062701843679-package tar:///tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/package
+183 verbose lock tar:///tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/package /tmp/npm-501/.npm/9e5c9322-5960-0-03492062701843679-package.lock
+184 silly lockFile eaeb1fd2-m-connect-once-0-1-1-package-tgz tar:///tmp/npm-501/.npm/connect-once/0.1.1/package.tgz
+185 verbose lock tar:///tmp/npm-501/.npm/connect-once/0.1.1/package.tgz /tmp/npm-501/.npm/eaeb1fd2-m-connect-once-0-1-1-package-tgz.lock
+186 silly lockFile 9e5c9322-5960-0-03492062701843679-package tar:///tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/package
+187 silly lockFile 9e5c9322-5960-0-03492062701843679-package tar:///tmp/npm-12494-m1wUv1Z1/1510293975960-0.03492062701843679/package
+188 silly lockFile eaeb1fd2-m-connect-once-0-1-1-package-tgz tar:///tmp/npm-501/.npm/connect-once/0.1.1/package.tgz
+189 silly lockFile eaeb1fd2-m-connect-once-0-1-1-package-tgz tar:///tmp/npm-501/.npm/connect-once/0.1.1/package.tgz
+190 silly lockFile f92ca892-1-npm-connect-once-0-1-1-package /tmp/npm-501/.npm/connect-once/0.1.1/package
+191 verbose lock /tmp/npm-501/.npm/connect-once/0.1.1/package /tmp/npm-501/.npm/f92ca892-1-npm-connect-once-0-1-1-package.lock
+192 silly lockFile f92ca892-1-npm-connect-once-0-1-1-package /tmp/npm-501/.npm/connect-once/0.1.1/package
+193 silly lockFile f92ca892-1-npm-connect-once-0-1-1-package /tmp/npm-501/.npm/connect-once/0.1.1/package
+194 verbose tar unpack /tmp/npm-501/.npm/connect-once/0.1.1/package.tgz
+195 silly lockFile 70976952-1-npm-connect-once-0-1-1-package tar:///tmp/npm-501/.npm/connect-once/0.1.1/package
+196 verbose lock tar:///tmp/npm-501/.npm/connect-once/0.1.1/package /tmp/npm-501/.npm/70976952-1-npm-connect-once-0-1-1-package.lock
+197 silly lockFile eaeb1fd2-m-connect-once-0-1-1-package-tgz tar:///tmp/npm-501/.npm/connect-once/0.1.1/package.tgz
+198 verbose lock tar:///tmp/npm-501/.npm/connect-once/0.1.1/package.tgz /tmp/npm-501/.npm/eaeb1fd2-m-connect-once-0-1-1-package-tgz.lock
+199 silly gunzTarPerm modes [ '755', '644' ]
+200 silly gunzTarPerm extractEntry package.json
+201 silly gunzTarPerm extractEntry .npmignore
+202 silly gunzTarPerm extractEntry README.md
+203 silly gunzTarPerm extractEntry gulpfile.js
+204 silly gunzTarPerm extractEntry index.js
+205 silly gunzTarPerm extractEntry .editorconfig
+206 silly gunzTarPerm extractEntry .jshintrc
+207 silly gunzTarPerm extractEntry .travis.yml
+208 silly gunzTarPerm extractEntry test/connection.js
+209 silly gunzTarPerm extractEntry test/constructor.js
+210 silly gunzTarPerm extractEntry test/heartbeat.js
+211 silly lockFile 70976952-1-npm-connect-once-0-1-1-package tar:///tmp/npm-501/.npm/connect-once/0.1.1/package
+212 silly lockFile 70976952-1-npm-connect-once-0-1-1-package tar:///tmp/npm-501/.npm/connect-once/0.1.1/package
+213 silly lockFile eaeb1fd2-m-connect-once-0-1-1-package-tgz tar:///tmp/npm-501/.npm/connect-once/0.1.1/package.tgz
+214 silly lockFile eaeb1fd2-m-connect-once-0-1-1-package-tgz tar:///tmp/npm-501/.npm/connect-once/0.1.1/package.tgz
+215 verbose chmod /tmp/npm-501/.npm/connect-once/0.1.1/package.tgz 644
+216 verbose chown /tmp/npm-501/.npm/connect-once/0.1.1/package.tgz [ 501, 20 ]
+217 silly lockFile 44a0c1b8-nect-once-connect-once-0-1-1-tgz https://registry.npmjs.org/connect-once/-/connect-once-0.1.1.tgz
+218 silly lockFile 44a0c1b8-nect-once-connect-once-0-1-1-tgz https://registry.npmjs.org/connect-once/-/connect-once-0.1.1.tgz
+219 silly lockFile 89457a72-connect-once-0-1-1 connect-once@0.1.1
+220 silly lockFile 89457a72-connect-once-0-1-1 connect-once@0.1.1
+221 silly lockFile daeaa60d-connect-once-0-1-0 connect-once@~0.1.0
+222 silly lockFile daeaa60d-connect-once-0-1-0 connect-once@~0.1.0
+223 silly resolved [ { name: 'connect-once',
+223 silly resolved     version: '0.1.1',
+223 silly resolved     description: 'Request connection once and memorize it for later',
+223 silly resolved     main: 'index.js',
+223 silly resolved     scripts:
+223 silly resolved      { test: 'istanbul test _mocha --report html -- test/*.js -R spec -t 1000',
+223 silly resolved        coveralls: 'istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- test/*.js -R spec -t 1000 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage' },
+223 silly resolved     devDependencies:
+223 silly resolved      { mocha: '~1.17.1',
+223 silly resolved        coveralls: '~2.8.0',
+223 silly resolved        'mocha-lcov-reporter': '0.0.1',
+223 silly resolved        istanbul: '~0.2.6',
+223 silly resolved        should: '~3.1.3',
+223 silly resolved        gulp: '~3.5.5',
+223 silly resolved        'gulp-gh-pages': '0.0.1',
+223 silly resolved        'gulp-jsdoc': '~0.1.0',
+223 silly resolved        is: '~0.3.0' },
+223 silly resolved     repository:
+223 silly resolved      { type: 'git',
+223 silly resolved        url: 'git://github.com/floatdrop/connect-once.git' },
+223 silly resolved     author: { name: 'Vsevolod Strukchinsky', email: 'floatdrop@gmail.com' },
+223 silly resolved     license: 'MIT',
+223 silly resolved     bugs: { url: 'https://github.com/floatdrop/connect-once/issues' },
+223 silly resolved     homepage: 'https://github.com/floatdrop/connect-once',
+223 silly resolved     readme: '# connect-once [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url]\n> Memorizing async function result\n\nThis module solves [problem](http://stackoverflow.com/questions/6275643/node-js-design-pattern-for-creating-db-connection-once/25209316#25209316) with connection creating in Node.JS.\n\nMost known example - MongoDB connections. Often you want to get one connection shared with all incoming requests. However there are two edges, that can hurt you, when your application starting under significant load. Connection should be:\n\n * Created once for all requests, that are coming at the same time - otherwise you can take down your database connection pool.\n * Ready before first request arrives - to reduce page loading time.\n\nAlso it is nice to have some retries, when database decides to take a rest. For this (and other) tasks connect-once was written. \n\n## Usage\n\nYou can see [express-mongo-db](https://github.com/floatdrop/express-mongo-db) and [express-mongoose-db](https://github.com/floatdrop/express-mongoose-db) as real-life examples of connect-once usage.\n\nInstall package with npm:\n\n`npm i connect-once --save`\n\nThen create a connection:\n\n```js\nvar connectOnce = require(\'connect-once\');\n\nvar connection = new connectOnce({ \n    retries: 60, \n    reconnectWait: 1000\n}, MongoClient.connect, \'mongodb://localhost/test\');\n\nconnection.when(\'available\', function (err, db) {\n    // Do stuff\n});\n```\n\n## Heartbeat\n\nHeartbeat is useful, when you want check connection from time to time. For example, if you working with mongodb and cache connection to db - what happens when server, which connection binded to goes to heaven? Connection is lost and programmer should recreate it.\n\n__Note:__ for now there is no way to stop heartbeats.\n\n```js\nvar connectOnce = require(\'connect-once\');\n\nvar connection = new connectOnce({ \n    heartbeat: function (db, beat) {\n        db.stats(function (err) {\n            if (!err) { beat(); }\n        });\n    }\n}, MongoClient.connect, \'mongodb://localhost/test\');\n\nconnection.when(\'available\', function (err, db) {\n    // Do stuff\n});\n```\n\n## Force retry (update cached value)\n\nThere are interesting use case of connect-once in a wild: it can be used as some sort of in-memory cache. Because it consumes general function with callback - there is no difference, what to memorize - connection or abstract object.\n\nSuppose you have a function `getCache(callback)`, that invokes `callback` with next arguments: `null, new Date()`. To update cached value from time-to time you can use next code:\n\n```js\nvar connectOnce = require(\'connect-once\');\nvar connection = new connectOnce(getCache);\nsetInterval(function () {\n    connection.retry(new Error(\'Update cache\'));\n}, 5000);\n```\n\nAlso `available` event will be fired every 5000 seconds.\n\n## API\n\nYou can read [source code](https://github.com/floatdrop/connect-once/blob/master/index.js) (65 sloc!) or generated [documentation of Connection class](http://floatdrop.github.io/connect-once/Connection.html) which is not very nice. \n\n# License\n\n(MIT License) (c) 2013 Vsevolod Strukchinsky (floatdrop@gmail.com)\n\n\n[npm-url]: https://npmjs.org/package/connect-once\n[npm-image]: https://badge.fury.io/js/connect-once.png\n\n[travis-url]: http://travis-ci.org/floatdrop/connect-once\n[travis-image]: https://travis-ci.org/floatdrop/connect-once.png?branch=master\n\n[coveralls-url]: https://coveralls.io/r/floatdrop/connect-once\n[coveralls-image]: https://coveralls.io/repos/floatdrop/connect-once/badge.png\n\n[depstat-url]: https://david-dm.org/floatdrop/connect-once\n[depstat-image]: https://david-dm.org/floatdrop/connect-once.png?theme=shields.io\n',
+223 silly resolved     readmeFilename: 'README.md',
+223 silly resolved     _id: 'connect-once@0.1.1',
+223 silly resolved     dist: { shasum: '02852a847d0f7c2e0b9a7b844ec80d29d04135e6' },
+223 silly resolved     _from: 'connect-once@~0.1.0',
+223 silly resolved     _resolved: 'https://registry.npmjs.org/connect-once/-/connect-once-0.1.1.tgz' } ]
+224 info install connect-once@0.1.1 into /Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db
+225 info installOne connect-once@0.1.1
+226 info /Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db/node_modules/connect-once unbuild
+227 verbose tar unpack /tmp/npm-501/.npm/connect-once/0.1.1/package.tgz
+228 silly lockFile 07a40377-ngo-db-node-modules-connect-once tar:///Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db/node_modules/connect-once
+229 verbose lock tar:///Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db/node_modules/connect-once /tmp/npm-501/.npm/07a40377-ngo-db-node-modules-connect-once.lock
+230 silly lockFile eaeb1fd2-m-connect-once-0-1-1-package-tgz tar:///tmp/npm-501/.npm/connect-once/0.1.1/package.tgz
+231 verbose lock tar:///tmp/npm-501/.npm/connect-once/0.1.1/package.tgz /tmp/npm-501/.npm/eaeb1fd2-m-connect-once-0-1-1-package-tgz.lock
+232 silly gunzTarPerm modes [ '755', '644' ]
+233 silly gunzTarPerm extractEntry package.json
+234 silly gunzTarPerm extractEntry .npmignore
+235 silly gunzTarPerm extractEntry README.md
+236 silly gunzTarPerm extractEntry gulpfile.js
+237 silly gunzTarPerm extractEntry index.js
+238 silly gunzTarPerm extractEntry .editorconfig
+239 silly gunzTarPerm extractEntry .jshintrc
+240 silly gunzTarPerm extractEntry .travis.yml
+241 silly gunzTarPerm extractEntry test/connection.js
+242 silly gunzTarPerm extractEntry test/constructor.js
+243 silly gunzTarPerm extractEntry test/heartbeat.js
+244 silly lockFile 07a40377-ngo-db-node-modules-connect-once tar:///Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db/node_modules/connect-once
+245 silly lockFile 07a40377-ngo-db-node-modules-connect-once tar:///Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db/node_modules/connect-once
+246 silly lockFile eaeb1fd2-m-connect-once-0-1-1-package-tgz tar:///tmp/npm-501/.npm/connect-once/0.1.1/package.tgz
+247 silly lockFile eaeb1fd2-m-connect-once-0-1-1-package-tgz tar:///tmp/npm-501/.npm/connect-once/0.1.1/package.tgz
+248 info preinstall connect-once@0.1.1
+249 verbose readDependencies using package.json deps
+250 verbose readDependencies using package.json deps
+251 silly resolved []
+252 verbose about to build /Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db/node_modules/connect-once
+253 info build /Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db/node_modules/connect-once
+254 verbose linkStuff [ false,
+254 verbose linkStuff   false,
+254 verbose linkStuff   false,
+254 verbose linkStuff   '/Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db/node_modules' ]
+255 info linkStuff connect-once@0.1.1
+256 verbose linkBins connect-once@0.1.1
+257 verbose linkMans connect-once@0.1.1
+258 verbose rebuildBundles connect-once@0.1.1
+259 info install connect-once@0.1.1
+260 info postinstall connect-once@0.1.1
+261 verbose about to build /Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db
+262 info build /Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/express-mongo-db
+263 verbose linkStuff [ false,
+263 verbose linkStuff   false,
+263 verbose linkStuff   false,
+263 verbose linkStuff   '/Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules' ]
+264 info linkStuff express-mongo-db@0.4.0
+265 verbose linkBins express-mongo-db@0.4.0
+266 verbose linkMans express-mongo-db@0.4.0
+267 verbose rebuildBundles express-mongo-db@0.4.0
+268 verbose rebuildBundles [ 'connect-once' ]
+269 info install express-mongo-db@0.4.0
+270 info postinstall express-mongo-db@0.4.0
+271 info build /Users/darpanmhatre/git/darpanmhatre/dmhatre
+272 verbose linkStuff [ false, false, false, '/Users/darpanmhatre/git/darpanmhatre' ]
+273 info linkStuff dmhatre@0.0.1
+274 verbose linkBins dmhatre@0.0.1
+275 verbose linkMans dmhatre@0.0.1
+276 verbose rebuildBundles dmhatre@0.0.1
+277 verbose rebuildBundles [ '.DS_Store',
+277 verbose rebuildBundles   '.bin',
+277 verbose rebuildBundles   'ejs',
+277 verbose rebuildBundles   'express',
+277 verbose rebuildBundles   'express-mongo-db',
+277 verbose rebuildBundles   'geoip-lite',
+277 verbose rebuildBundles   'mongodb' ]
+278 verbose rebuild bundle /Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/geoip-lite
+279 info build /Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules/geoip-lite
+280 info preinstall geoip-lite@1.1.3
+281 verbose linkStuff [ false,
+281 verbose linkStuff   false,
+281 verbose linkStuff   false,
+281 verbose linkStuff   '/Users/darpanmhatre/git/darpanmhatre/dmhatre/node_modules' ]
+282 info linkStuff geoip-lite@1.1.3
+283 verbose linkBins geoip-lite@1.1.3
+284 verbose linkMans geoip-lite@1.1.3
+285 verbose rebuildBundles geoip-lite@1.1.3
+286 verbose rebuildBundles [ 'async',
+286 verbose rebuildBundles   'colors',
+286 verbose rebuildBundles   'glob',
+286 verbose rebuildBundles   'iconv-lite',
+286 verbose rebuildBundles   'lazy',
+286 verbose rebuildBundles   'rimraf',
+286 verbose rebuildBundles   'unzip' ]
+287 info install geoip-lite@1.1.3
+288 info postinstall geoip-lite@1.1.3
+289 verbose unsafe-perm in lifecycle true
+290 error Error: spawn ENOENT
+290 error     at errnoException (child_process.js:980:11)
+290 error     at Process.ChildProcess._handle.onexit (child_process.js:771:34)
+291 error If you need help, you may report this *entire* log,
+291 error including the npm and node versions, at:
+291 error     <http://github.com/isaacs/npm/issues>
+292 error System Darwin 15.6.0
+293 error command "node" "/usr/local/bin/npm" "install"
+294 error cwd /Users/darpanmhatre/git/darpanmhatre/dmhatre
+295 error node -v v0.10.23
+296 error npm -v 1.3.17
+297 error syscall spawn
+298 error code ENOENT
+299 error errno ENOENT
+300 verbose exit [ 1, true ]

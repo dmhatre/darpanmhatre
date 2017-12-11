@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dmhatre :: Demo d3js</title>
+    <meta name="description" content="The personal website of Darpan Mhatre, a software evangelist who enjoys learning and implementing new technologies">
+	<meta name="ROBOTS" content="INDEX, FOLLOW">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="Darpan Mhatre, serverless architecture, aws, amazon web services, elastic beanstalk, elasticbeanstalk, spring boot, spring boot with mysql, spring boot mysql, spring boot oauth2, spring boot with oauth2, oauth2, facebook oauth2, oauth, single sign on, sso, install node.js, create node.js server, use screen command, Java Servlet, Spring 4 MVC, Spring MVC, Spring, MVC, Tomcat, Tomcat 7, eclipse tomcat plugin">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Pragma" content="no-cache">
+	
+	<link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+	<link rel="stylesheet" href="../css/leaflet.css" />
+	
+	<script src="../js/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="../js/leaflet.js"></script>
+    <script src="../lib/d3.min.js" type="text/javascript"></script>
+	<script src="../lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <style>
+      .navbar-inverse {
+    	background-color: #563D7C;
+    	border-color: #563D7C;
+      }
+      .navbar-inverse .navbar-nav > .active > a, 
+      .navbar-inverse .navbar-nav > .active > a:hover, 
+      .navbar-inverse .navbar-nav > .active > a:focus {
+    	background-color: #FF803E;
+    	color: #FFFFFF;
+      }
+      .navbar-inverse .navbar-nav > .open > a, 
+      .navbar-inverse .navbar-nav > .open > a:hover, 
+      .navbar-inverse .navbar-nav > .open > a:focus {
+     	background-color: #FF803E;
+    	color: #FFFFFF;
+      }
+      #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+	  .track {
+  		stroke: #000;
+  		stroke-opacity: 0.3;
+  		stroke-width: 10px;
+	  }
+	  .handle {
+  		fill: #fff;
+  		stroke: #000;
+  		stroke-opacity: 0.5;
+  		stroke-width: 1.25px;
+  		cursor: crosshair;
+	  }
+    </style>
+    <script>
+    
+    var svg;
+    var geoJson;
+    var map;
+    var dataPoint = {};
+    
+    $(function() {
+    	initMap();
+    	initData();
+    	initBarChart();
+    	initSlider();
+    });
+
+    function initData() {
+    	for (var i = 0; i <= 10; i++) {
+    		dataPoint[i] = getRandomArray();
+    	}
+    }
+
+    function getRandomArray() {
+    	var array = [];
+    	for (var i = 0; i < 9; i++) {
+    		array.push(Math.floor((Math.random() * 40)));
+    	}
+    	return array;
+    }
+
+    function initBarChart() {
+    	svg = d3.select("#bar-chart").append("svg").attr("height", "100%").attr("width", "100%");
+    	svg.selectAll("rect").data(dataPoint[0]).enter().append("rect").attr("width", "40").attr("height", function(d, i) {
+    		return (d * 10)
+    	}).attr("x", function(d, i) {
+    		return (i * 55);
+    	}).attr("y", function(d, i) {
+    		return 550 - (d * 10);
+    	}).attr("fill", function(d, i) {
+    		return getBarColor(d, i);
+    	}).on("mouseover", function(d, i) {
+    		var layers = geoJson.getLayers();
+    		for (var k = 0; k < layers.length; k++) {
+    			var layer = layers[k];
+    			if (layer.feature.id == (i + 1)) {
+    				layer.setStyle({
+    					fillOpacity: 1.0
+    				});
+    			}
+    		}
+    	}).on("mouseout", function(d, i) {
+    		var layers = geoJson.getLayers();
+    		for (var k = 0; k < layers.length; k++) {
+    			var layer = layers[k];
+    			geoJson.resetStyle(layer);
+    		}
+    	});
+    	svg.selectAll("text").data(dataPoint[0]).enter().append("text").text(function(d) {
+    		return d
+    	}).style("font-weight", "bold").style("fill", function(d, i) {
+    		return getLabelColor(d, i);
+    	}).attr("x", function(d, i) {
+    		return (i * 55) + 10;
+    	}).attr("y", function(d, i) {
+    		return d < 2 ? 545 - (d * 10) : 565 - (d * 10);
+    	});
+    }
+
+    function getBarColor(d, i) {
+    	if (i == 0) return "#70B89B";
+    	if (i == 1) return "#217151";
+    	if (i == 2) return "#CA7B93";
+    	if (i == 3) return "#942B4B";
+    	if (i == 4) return "#D3B080";
+    	if (i == 5) return "#A67530";
+    	if (i == 6) return "#A65330";
+    	if (i == 7) return "#7D4E3A";
+    	if (i == 8) return "#6C2B10";
+    }
+
+    function getLabelColor(d, i) {
+    	if (d >= 2) {
+    		return "#FFFFFF";
+    	}
+    	if (i == 0) return "#70B89B";
+    	if (i == 1) return "#217151";
+    	if (i == 2) return "#CA7B93";
+    	if (i == 3) return "#942B4B";
+    	if (i == 4) return "#D3B080";
+    	if (i == 5) return "#A67530";
+    	if (i == 6) return "#A65330";
+    	if (i == 7) return "#7D4E3A";
+    	if (i == 8) return "#6C2B10";
+    }
+
+    function redraw(key) {
+    	svg.selectAll("rect").data(dataPoint[key]).transition().duration(1000).attr("height", function(d, i) {
+    		return (d * 10)
+    	}).attr("y", function(d, i) {
+    		return 550 - (d * 10);
+    	});
+    	svg.selectAll("text").data(dataPoint[key]).transition().duration(1000).text(function(d) {
+    		return d
+    	}).style("font-weight", "bold").style("fill", function(d, i) {
+    		return getLabelColor(d, i);
+    	}).attr("x", function(d, i) {
+    		return (i * 55) + 10;
+    	}).attr("y", function(d, i) {
+    		return d < 2 ? 545 - (d * 10) : 565 - (d * 10);
+    	});
+    }
+
+    function initSlider() {
+    	var svgContainer = d3.select('#slider').append('svg').attr('height', 50).attr('width', 600);
+    	var sliderGroup = svgContainer.append("g").data([{
+    		x: 0,
+    		y: 0
+    	}]).attr('height', 50).attr('width', 450).attr('transform', 'translate(35, 15)');
+    	var x = d3.scaleOrdinal().domain([2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010]).range([0, 50, 100, 150, 200, 250, 300, 350, 400, 450]);
+    	var line = sliderGroup.append("line").attr("class", "track").attr("x1", 0).attr("x2", 450);
+    	sliderGroup.append("circle").attr("class", "handle").attr("r", 12).attr("cx", function(d) {
+    		return d.x;
+    	}).attr("cy", function(d) {
+    		return d.y;
+    	}).call(d3.drag().on("drag", dragMove).on("end", dragEnd));
+    	sliderGroup.selectAll("text").data([2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010]).enter().append("text").attr("x", x).attr("text-anchor", "middle").text(function(d) {
+    		return d;
+    	}).attr('transform', 'translate(0, 30)');
+
+    	function dragMove(d) {
+    		d3.select(this).attr("opacity", 0.6).attr("cx", d.x = Math.max(0, Math.min(450, d3.event.x)));
+    		redraw(Math.floor(d3.event.x / 50));
+    	}
+
+    	function dragEnd() {
+    		d3.select(this).attr('opacity', 1);
+    	}
+    }
+
+    function style(feature) {
+    	return {
+    		fillColor: feature.properties.color,
+    		weight: 2,
+    		opacity: 1,
+    		color: 'white',
+    		dashArray: '3',
+    		fillOpacity: 0.6
+    	};
+    }
+
+    function highlightFeature(e) {
+    	var layer = e.target;
+    	layer.setStyle({
+    		fillOpacity: 1.0
+    	});
+    	if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+    		layer.bringToFront();
+    	}
+    }
+
+    function resetHighlight(e) {
+    	geoJson.resetStyle(e.target);
+    }
+
+    function zoomToFeature(e) {
+    	map.fitBounds(e.target.getBounds());
+    }
+
+    function onEachFeature(feature, layer) {
+    	layer.on({
+    		mouseover: highlightFeature,
+    		mouseout: resetHighlight,
+    		click: zoomToFeature
+    	});
+    }
+
+    function initMap() {
+    	map = L.map('map-canvas').setView([42.648613, -73.761391], 6);
+    	// add an OpenStreetMap tile layer
+    	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    	}).addTo(map);
+    	d3.json("../js/northeast-us-states.json", function(data) {
+    		geoJson = L.geoJson(data, {
+    			style: style,
+    			onEachFeature: onEachFeature
+    		}).addTo(map);
+    	});
+    }
+	</script>
+  </head>
+  <body style="background-color:#9AD2FF;">
+    <div class="container-fluid">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Darpan Mhatre</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse" style="padding-right:20px;">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Resume
+              <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              	<li><a href="/downloadresume">Download Resume</a></li>
+                <li><a href="/summary">Summary</a></li>
+                <li><a href="/skills">Skills</a></li>
+                <li><a href="/experience">Experience</a></li>
+                <li><a href="/education">Education</a></li>
+              </ul>
+            </li>
+            <li>
+            	<a href="#myModal" data-toggle="modal">Video Resume</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/awselasticbeanstalk">AWS Elastic Beanstalk</a></li>
+                <li><a href="/springbootmysql">Spring Boot with Mysql</a></li>
+                <li><a href="/spring4mvc">Spring 4 MVC</a></li>
+                <li><a href="/javaservlet">Java Servlet</a></li>
+                <li><a href="/installnode">Installing nodejs on ubuntu 12</a></li>
+                <li><a href="/createnodejsserver">Create simple nodejs server</a></li>
+                <li><a href="/usescreen">Screen</a></li>
+                <li><a href="/installredis">Install Redis</a></li>
+                <li><a href="/springbootoauth2">Spring Boot with OAuth2</a></li>
+              </ul>
+            </li>
+            <li><a href="/contactinfo">Contact Info</a></li>
+            <li class="active"><a href="#">Demo d3js</a></li>
+          </ul>
+        </div>
+    </nav>
+    <div class="row" style="padding-top:51px;">
+    	<div id="map-canvas" class="col-md-6" style="height:600px;margin-top:31px"></div>
+    	<div class="col-md-6">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div id="bar-chart" style="padding-left: 15px; height: 600px;"></div>
+    			</div>
+    		</div>
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div id="slider"></div>
+    			</div>
+    		</div>
+        </div>
+    </div>
+    <div class="row" style="padding-top:25px;">
+    	<div class="col-md-12">
+    		<div><span class="badge">1</span>&nbsp;&nbsp;<span>Click on the circle and drag along the slider, to get data by year</span></div>
+    		<div><span class="badge">2</span>&nbsp;&nbsp;<span>Hover over bars in the bar chart to highlight states respectively</span></div>
+    		<div><span class="badge">3</span>&nbsp;&nbsp;<span>Hover over states map to highlight it</span></div>		
+    	</div>
+    </div>
+    </div>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Video Resume</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Coming soon, Keep watching this space.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+  </body>
+</html>
